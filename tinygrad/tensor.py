@@ -496,7 +496,7 @@ class Tensor:
   # ***** math functions (unary) *****
   def ceil(self: Tensor) -> Tensor:
     b = self.cast(dtypes.int32).contiguous()
-    return (self > 0).where(b+1, b)
+    return(self > 0).where(b+1, b)
   def floor(self: Tensor) -> Tensor: return self.ceil() - 1
 
   def __neg__(self): return 0.0-self
